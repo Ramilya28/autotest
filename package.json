@@ -1,0 +1,17 @@
+{
+  "name": "lalafo-multi-languagesupport",
+  "version": "1.0.0",
+  "description": "Playwright tests on TS",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Ramilya",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.48.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.7"
+  }
+}
