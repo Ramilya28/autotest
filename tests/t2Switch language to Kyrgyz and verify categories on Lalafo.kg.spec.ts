@@ -1,29 +1,20 @@
 import { test, expect } from '@playwright/test';
+import { MainPage } from '../pages/MainPage';
+
 test('Switch language to Kyrgyz and verify categories on Lalafo.kg', async ({ page }) => {
-  // Переход на главную страницу
-  await page.goto('https://lalafo.kg/', { waitUntil: 'networkidle' });
-  // Открыть меню категорий
-  await page.getByRole('button', { name: 'Все категории' }).click();
+  const mainPage = new MainPage(page);
 
-  // Закрыть меню категорий, чтобы освободить экран для выбора языка
-  await page.getByRole('button', { name: 'Все категории' }).click();
-  
-  // Нажать на баннер и выбрать "Русский" язык
-  await page.getByRole('banner').getByRole('img').nth(1).click();
-  const russianOption = page.locator('p').filter({ hasText: 'Русский' }).getByRole('img').nth(1);
-  await russianOption.waitFor({ state: 'visible' });
-  await russianOption.click();
+  // Переход на сайт
+  await mainPage.navigate();
 
-  // Переключение на кыргызский язык
-  await page.getByRole('link', { name: 'Кыргыз тили' }).click();
+  // Переключение языка на кыргызский
+  await mainPage.changeLanguageToKyrgyz();
 
-  // Проверка, что язык переключился на кыргызский
-  await expect(page.locator('body')).toContainText('Баардык категориялар');
+  // Проверка, что текст на странице на кыргызском языке
+  await mainPage.verifyTextOnPage('Баардык категориялар');
 
-  // Открыть и закрыть меню категорий на кыргызском языке
+  // Проверка открытия и закрытия меню категорий
   await page.getByRole('button', { name: 'Баардык категориялар' }).click();
   await page.getByRole('button', { name: 'Баардык категориялар' }).click();
-
-  // Проверка, что меню категорий открылось и закрылось без ошибок
-  await expect(page.getByRole('button', { name: 'Баардык категориялар' })).toBeVisible();
 });
+

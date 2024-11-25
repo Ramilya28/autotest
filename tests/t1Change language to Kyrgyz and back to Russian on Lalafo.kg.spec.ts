@@ -1,26 +1,21 @@
 import { test, expect } from '@playwright/test';
+import { MainPage } from '../pages/MainPage';
 
 test('Change language to Kyrgyz and back to Russian on Lalafo.kg', async ({ page }) => {
-  // Переход на сайт с ожиданием, пока все сетевые запросы завершатся
-  await page.goto('https://lalafo.kg/', { waitUntil: 'networkidle' });
+  const mainPage = new MainPage(page);
 
-  // Нажать на баннер для выбора языка
-  await page.getByRole('banner').getByRole('img').nth(1).click();
+  // Переход на сайт
+  await mainPage.navigate();
 
-  // Ожидание видимости элемента и клик на "Русский" язык
-  const russianOption = page.locator('.LFDropdownLinksList-title-text >> text=Русский');
-  await russianOption.waitFor({ state: 'visible', timeout: 10000 });
-  await russianOption.click();
+  // Переключение языка на русский
+  await mainPage.changeLanguageToRussian();
 
-  // Проверка, что текст "Русский" виден на странице
-  await expect(page.locator('body')).toContainText('Русский');
+  // Проверка, что текст на странице на русском
+  await mainPage.verifyTextOnPage('Русский');
 
-  // Ожидание видимости элемента и клик на "Кыргыз тили"
-  const kyrgyzOption = page.getByRole('link', { name: 'Кыргыз тили' });
-  await kyrgyzOption.waitFor({ state: 'visible', timeout: 10000 });
-  await kyrgyzOption.click();
-  
-  // Проверка, что текст "Кыргыз тили" виден на странице
-  await expect(page.locator('body')).toContainText('Кыргыз тили');
+  // Переключение языка на кыргызский
+  await mainPage.changeLanguageToKyrgyz();
+
+  // Проверка, что текст на странице на кыргызском
+  await mainPage.verifyTextOnPage('Кыргыз тили');
 });
-
