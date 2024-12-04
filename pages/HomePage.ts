@@ -35,14 +35,6 @@ export class HomePage {
     await expect(this.page.locator('body')).toContainText(expectedText);
   }
 
-  // async toggleCategoriesMenu() {
-  //   if (await this.categoriesButton.isVisible()) {
-  //     await this.categoriesButton.click();
-  //   }
-  //   if (await this.categoriesButton.isVisible()) {
-  //     await this.categoriesButton.click();
-  //   }
-  // }
   async toggleCategoriesMenu() {
     const categoriesButton = this.page.locator('button.all-categories-button');
     

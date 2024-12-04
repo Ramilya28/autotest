@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "1d8a35a3-9360-4e81-8ae2-ba96edf26151",
+		"name": "Тестинг",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39666551"
+	},
+	"item": [
+		{
+			"name": "tree",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"protocolVersion": "auto"
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4",
+						"type": "text"
+					},
+					{
+						"key": "Country-Id",
+						"value": " 12",
+						"type": "text"
+					},
+					{
+						"key": "Device",
+						"value": " pc",
+						"type": "text"
+					},
+					{
+						"key": "Experiment",
+						"value": " discountlevelpurchase-discountlevelpurchase-partition-3",
+						"type": "text"
+					},
+					{
+						"key": "Language",
+						"value": " ru_RU",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " https://lalafo.kg/account/settings",
+						"type": "text"
+					},
+					{
+						"key": "User-Hash",
+						"value": " e73c5746-3f93-4d49-8240-9fce6165380a",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/proxy/catalog/v3/categories/tree",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"proxy",
+						"catalog",
+						"v3",
+						"categories",
+						"tree"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all balances",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body matches the expected JSON model\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(jsonData).to.have.property(\"main\");\r",
+							"    pm.expect(jsonData.main).to.have.property(\"id\");\r",
+							"    pm.expect(jsonData.main).to.have.property(\"user_id\");\r",
+							"    pm.expect(jsonData.main).to.have.property(\"balance\");\r",
+							"    pm.expect(jsonData.main).to.have.property(\"currency\");\r",
+							"\r",
+							"    pm.expect(jsonData).to.have.property(\"bonus\");\r",
+							"    pm.expect(jsonData.bonus).to.have.property(\"id\");\r",
+							"    pm.expect(jsonData.bonus).to.have.property(\"user_id\");\r",
+							"    pm.expect(jsonData.bonus).to.have.property(\"balance\");\r",
+							"    pm.expect(jsonData.bonus).to.have.property(\"currency\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " event_user_hash=e73c5746-3f93-4d49-8240-9fce6165380a; _fbp=fb.1.1725903615201.792573110654598079; onboarding_wallet_balance_in_header=true; jwt_token_spa=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4; event_session_id=a7252adbb0dc78935b825490483639dc; experiment=discountlevelpurchase-discountlevelpurchase-partition-3; language_spa=ru_RU; cf_clearance=Sj1RzpVvnsN.UXrEN7o99ecoe.e_UbUAuT6iADJ4Jb0-1733332826-1.2.1.1-skWHDlOLDtosoH5XQpimWneyTFI6Kej1woLHR3BM4Z6a_HoKCwo.6zMfOY9Tc6SPNUlNpc23BDUFlCMLXcP62YoVm4tVnGITND94V5yUU_hP4wNPf8EPoQWUrqUZCncgfovCztWk0UwztfBoSWO08vW2dpoguWl1SwQMb07GTxPn6T_OEQkYYIr3CB63Q3byxZZrY6YmGFHR6IycUxEi4UB6zgWxcEIe7jj_LTXe7hoJp6pWRjcCTdQLO4TvktDzJ12i8DTFCYWuVCj8DQyqacWYsJauGlaBPmEZp.aoOxtZbesXZsvruA3hCREpJockUzSsJ15sC.nOi6RQdYTIiCaTeYpWJWRo7roOGor5ZG.hHaDZvZySd06d1IRbQtWZ; lastAnalyticsEvent=home:page:attribution:page:view; device_fingerprint=5721ba8d1006d28e6a049034da95a5e6",
+						"type": "text"
+					},
+					{
+						"key": "Country-Id",
+						"value": " 12",
+						"type": "text"
+					},
+					{
+						"key": "Device",
+						"value": " pc",
+						"type": "text"
+					},
+					{
+						"key": "Experiment",
+						"value": " discountlevelpurchase-discountlevelpurchase-partition-3",
+						"type": "text"
+					},
+					{
+						"key": "Language",
+						"value": " ru_RU",
+						"type": "text"
+					},
+					{
+						"key": "Pragma",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Priority",
+						"value": " u=1, i",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " https://lalafo.kg/account/settings",
+						"type": "text"
+					},
+					{
+						"key": "Request-Id",
+						"value": " react-client_f6dec721-2453-4d24-9fc9-aa15496b7d88",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua",
+						"value": " \"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua-Mobile",
+						"value": " ?0",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua-Platform",
+						"value": " \"Windows\"",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": " empty",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": " cors",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": " same-origin",
+						"type": "text"
+					},
+					{
+						"key": "User-Hash",
+						"value": " e73c5746-3f93-4d49-8240-9fce6165380a",
+						"type": "text"
+					},
+					{
+						"key": "X-Cache-Bypass",
+						"value": " yes",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/wallet/v3/accounts/all-balances",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"wallet",
+						"v3",
+						"accounts",
+						"all-balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profiles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response body matches the expected JSON model\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"id\");\r",
+							"    pm.expect(jsonData).to.have.property(\"access_token\");\r",
+							"    pm.expect(jsonData).to.have.property(\"username\");\r",
+							"    pm.expect(jsonData).to.have.property(\"avatar\");\r",
+							"    pm.expect(jsonData).to.have.property(\"language_id\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " event_user_hash=e73c5746-3f93-4d49-8240-9fce6165380a; _fbp=fb.1.1725903615201.792573110654598079; onboarding_wallet_balance_in_header=true; jwt_token_spa=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4; event_session_id=a7252adbb0dc78935b825490483639dc; experiment=discountlevelpurchase-discountlevelpurchase-partition-3; language_spa=ru_RU; cf_clearance=Sj1RzpVvnsN.UXrEN7o99ecoe.e_UbUAuT6iADJ4Jb0-1733332826-1.2.1.1-skWHDlOLDtosoH5XQpimWneyTFI6Kej1woLHR3BM4Z6a_HoKCwo.6zMfOY9Tc6SPNUlNpc23BDUFlCMLXcP62YoVm4tVnGITND94V5yUU_hP4wNPf8EPoQWUrqUZCncgfovCztWk0UwztfBoSWO08vW2dpoguWl1SwQMb07GTxPn6T_OEQkYYIr3CB63Q3byxZZrY6YmGFHR6IycUxEi4UB6zgWxcEIe7jj_LTXe7hoJp6pWRjcCTdQLO4TvktDzJ12i8DTFCYWuVCj8DQyqacWYsJauGlaBPmEZp.aoOxtZbesXZsvruA3hCREpJockUzSsJ15sC.nOi6RQdYTIiCaTeYpWJWRo7roOGor5ZG.hHaDZvZySd06d1IRbQtWZ; lastAnalyticsEvent=home:page:attribution:page:view; device_fingerprint=5721ba8d1006d28e6a049034da95a5e6",
+						"type": "text"
+					},
+					{
+						"key": "Country-Id",
+						"value": " 12",
+						"type": "text"
+					},
+					{
+						"key": "Device",
+						"value": " pc",
+						"type": "text"
+					},
+					{
+						"key": "Experiment",
+						"value": " discountlevelpurchase-discountlevelpurchase-partition-3",
+						"type": "text"
+					},
+					{
+						"key": "Language",
+						"value": " ru_RU",
+						"type": "text"
+					},
+					{
+						"key": "Pragma",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Priority",
+						"value": " u=1, i",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " https://lalafo.kg/account/settings",
+						"type": "text"
+					},
+					{
+						"key": "Request-Id",
+						"value": " react-client_502234ef-4d43-4d96-b3bf-25ea55d683db",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua",
+						"value": " \"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua-Mobile",
+						"value": " ?0",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua-Platform",
+						"value": " \"Windows\"",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": " empty",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": " cors",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": " same-origin",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "User-Hash",
+						"value": " e73c5746-3f93-4d49-8240-9fce6165380a",
+						"type": "text"
+					},
+					{
+						"key": "X-Cache-Bypass",
+						"value": " yes",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user/v3/profiles",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"v3",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favorite",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " event_user_hash=e73c5746-3f93-4d49-8240-9fce6165380a; _fbp=fb.1.1725903615201.792573110654598079; onboarding_wallet_balance_in_header=true; jwt_token_spa=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU3MTUyNjAsImFjY2Vzc190b2tlbiI6IlpGN0s1MmNQRm9DZmFKZTZWUEt5RXBoalJFX1dUTjJyIiwiYXZhdGFyIjoiaHR0cHM6XC9cL2ltZzUubGFsYWZvLmNvbVwvaVwvYXZhdGFyXC8yNVwvNGNcL2UzXC84ZTIxNDkwMTA4YTQxZDVjN2JkYTk4OTg4NC5qcGVnIiwidXNlcm5hbWUiOiJSYW1pbGlhIFNhdmFyb3ZhIiwicHJvIjpmYWxzZX0.dkej3zihOGlVp4JoToqn423PSpMUB1ip_dkcRNzEEC4; event_session_id=a7252adbb0dc78935b825490483639dc; experiment=discountlevelpurchase-discountlevelpurchase-partition-3; language_spa=ru_RU; cf_clearance=Sj1RzpVvnsN.UXrEN7o99ecoe.e_UbUAuT6iADJ4Jb0-1733332826-1.2.1.1-skWHDlOLDtosoH5XQpimWneyTFI6Kej1woLHR3BM4Z6a_HoKCwo.6zMfOY9Tc6SPNUlNpc23BDUFlCMLXcP62YoVm4tVnGITND94V5yUU_hP4wNPf8EPoQWUrqUZCncgfovCztWk0UwztfBoSWO08vW2dpoguWl1SwQMb07GTxPn6T_OEQkYYIr3CB63Q3byxZZrY6YmGFHR6IycUxEi4UB6zgWxcEIe7jj_LTXe7hoJp6pWRjcCTdQLO4TvktDzJ12i8DTFCYWuVCj8DQyqacWYsJauGlaBPmEZp.aoOxtZbesXZsvruA3hCREpJockUzSsJ15sC.nOi6RQdYTIiCaTeYpWJWRo7roOGor5ZG.hHaDZvZySd06d1IRbQtWZ; lastAnalyticsEvent=home:page:attribution:page:view; device_fingerprint=5721ba8d1006d28e6a049034da95a5e6",
+						"type": "text"
+					},
+					{
+						"key": "Country-Id",
+						"value": " 12",
+						"type": "text"
+					},
+					{
+						"key": "Device",
+						"value": " pc",
+						"type": "text"
+					},
+					{
+						"key": "Experiment",
+						"value": " discountlevelpurchase-discountlevelpurchase-partition-3",
+						"type": "text"
+					},
+					{
+						"key": "Language",
+						"value": " ru_RU",
+						"type": "text"
+					},
+					{
+						"key": "Pragma",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Priority",
+						"value": " u=1, i",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " https://lalafo.kg/account/settings",
+						"type": "text"
+					},
+					{
+						"key": "Request-Id",
+						"value": " react-client_502234ef-4d43-4d96-b3bf-25ea55d683db",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua",
+						"value": " \"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua-Mobile",
+						"value": " ?0",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Ch-Ua-Platform",
+						"value": " \"Windows\"",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": " empty",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": " cors",
+						"type": "text"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": " same-origin",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "User-Hash",
+						"value": " e73c5746-3f93-4d49-8240-9fce6165380a",
+						"type": "text"
+					},
+					{
+						"key": "X-Cache-Bypass",
+						"value": " yes",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/search/v3/feed/my/favorite?expand=url&per-page=40",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"search",
+						"v3",
+						"feed",
+						"my",
+						"favorite"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "url"
+						},
+						{
+							"key": "per-page",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://lalafo.kg/api",
+			"type": "string"
+		}
+	]
+}
