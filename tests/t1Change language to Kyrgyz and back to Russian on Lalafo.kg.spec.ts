@@ -1,21 +1,16 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../pages/MainPage';
+import { HomePage } from '../pages/HomePage';
 
 test('Change language to Kyrgyz and back to Russian on Lalafo.kg', async ({ page }) => {
-  const mainPage = new MainPage(page);
+  const homePage = new HomePage(page);
 
-  // Переход на сайт
-  await mainPage.navigate();
+  await homePage.navigate();
 
-  // Переключение языка на русский
-  await mainPage.changeLanguageToRussian();
+  // Переключение на русский язык и проверка
+  await homePage.selectLanguage('Russian');
+  await homePage.verifyLanguageText('Русский');
 
-  // Проверка, что текст на странице на русском
-  await mainPage.verifyTextOnPage('Русский');
-
-  // Переключение языка на кыргызский
-  await mainPage.changeLanguageToKyrgyz();
-
-  // Проверка, что текст на странице на кыргызском
-  await mainPage.verifyTextOnPage('Кыргыз тили');
+  // Переключение на кыргызский язык и проверка
+  await homePage.selectLanguage('Kyrgyz');
+  await homePage.verifyLanguageText('Кыргыз тили');
 });

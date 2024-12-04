@@ -1,20 +1,22 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../pages/MainPage';
+import { HomePage } from '../pages/HomePage';
 
 test('Switch language to Kyrgyz and verify categories on Lalafo.kg', async ({ page }) => {
-  const mainPage = new MainPage(page);
+  const homePage = new HomePage(page);
 
-  // Переход на сайт
-  await mainPage.navigate();
+  await homePage.navigate();
 
-  // Переключение языка на кыргызский
-  await mainPage.changeLanguageToKyrgyz();
+  // Открытие и закрытие меню категорий
+  await homePage.toggleCategoriesMenu();
 
-  // Проверка, что текст на странице на кыргызском языке
-  await mainPage.verifyTextOnPage('Баардык категориялар');
+  // Переключение на русский язык
+  await homePage.selectLanguage('Russian');
+  await homePage.verifyLanguageText('Все категории');
 
-  // Проверка открытия и закрытия меню категорий
-  await page.getByRole('button', { name: 'Баардык категориялар' }).click();
-  await page.getByRole('button', { name: 'Баардык категориялар' }).click();
+  // Переключение на кыргызский язык
+  await homePage.selectLanguage('Kyrgyz');
+  await homePage.verifyLanguageText('Баардык категориялар');
+
+  // Открытие и закрытие меню категорий на кыргызском языке
+  await homePage.toggleCategoriesMenu();
 });
-
