@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
+import { HomePage } from '../../pages/HomePage';
 
 test('Switch language to Kyrgyz and verify categories on Lalafo.kg', async ({ page }) => {
   const homePage = new HomePage(page);

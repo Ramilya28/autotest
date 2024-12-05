@@ -21,3 +21,8 @@
 Требования
 - Playwright
 - Node.js (версия 14 и выше)
+
+
+
+## add and configure tsconfig 
+https://www.typescriptlang.org/docs/handbook/tsconfig-json.html 
