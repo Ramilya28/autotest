@@ -1,5 +1,5 @@
-Проект автоматизированного тестирования для Lalafo
-Описание
+## Проект автоматизированного тестирования для Lalafo
+## Описание
 Этот проект использует Playwright для автоматизации тестов на сайте Lalafo.kg. 
 Основная цель проекта — протестировать функциональность переключения языков на сайте с русского на кыргызский и обратно, а также проверить отображение категорий на главной странице после переключения языков.
  Основные тесты
@@ -18,11 +18,27 @@
 - Переключение с русского на кыргызский язык.
 - Проверка, что текст на странице обновляется на кыргызский.
 - Открытие и закрытие модального окна входа/регистрации.
-Требования
+## Требования
 - Playwright
 - Node.js (версия 14 и выше)
 
-
-
 ## add and configure tsconfig 
 https://www.typescriptlang.org/docs/handbook/tsconfig-json.html 
+
+
+## Установка 
+Команда установит все зависимости 
+npm install 
+Установка Playwright
+npm init playwright@latest
+
+
+## Ссылки на тестовые примеры
+/tests/api/AllBalances.spec.ts
+/tests/api/Favorite.spec.ts
+/tests/api/ListOfTree.spec.ts
+/tests/api/Profiles.spec.ts
+
+/tests/ui/t1Change language to Kyrgyz and back to Russian on Lalafo.kg.spec.ts
+/tests/ui/t2Switch language to Kyrgyz and verify categories on Lalafo.kg.spec.ts
+/tests/ui/t3Change language and test registration modal.spec.ts
