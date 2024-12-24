@@ -34,11 +34,11 @@ npm init playwright@latest
 
 
 ## Ссылки на тестовые примеры
-# /tests/api/AllBalances.spec.ts
-# /tests/api/Favorite.spec.ts
-# /tests/api/ListOfTree.spec.ts
-# /tests/api/Profiles.spec.ts
+### /tests/api/AllBalances.spec.ts
+### /tests/api/Favorite.spec.ts
+### /tests/api/ListOfTree.spec.ts
+### /tests/api/Profiles.spec.ts
 
-# /tests/ui/t1Change language to Kyrgyz and back to Russian on Lalafo.kg.spec.ts
-# /tests/ui/t2Switch language to Kyrgyz and verify categories on Lalafo.kg.spec.ts
-# /tests/ui/t3Change language and test registration modal.spec.ts
+### /tests/ui/t1Change language to Kyrgyz and back to Russian on Lalafo.kg.spec.ts
+### /tests/ui/t2Switch language to Kyrgyz and verify categories on Lalafo.kg.spec.ts
+### /tests/ui/t3Change language and test registration modal.spec.ts
