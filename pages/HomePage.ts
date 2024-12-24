@@ -74,4 +74,5 @@ async selectLanguage(language: 'Russian' | 'Kyrgyz') {
   async openRegistrationModal() {
     await this.loginButton.click();
     await expect(this.registrationModal).toBeVisible(); 
+  }
 }
